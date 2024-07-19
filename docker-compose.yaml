@@ -1,0 +1,43 @@
+services:
+  directus:
+    image: directus/directus:10.13.1
+    ports:
+      - 8055:8055
+    volumes:
+      - ./database:/rosatom/database
+      - ./uploads:/rosatom/uploads
+      - ./extensions:/rosatom/extensions
+    env_file:
+      - .env
+    environment:
+      DB_CLIENT: "sqlite3"
+      DB_FILENAME: "/rosatom/database/data.db"
+      WEBSOCKETS_ENABLED: "true"
+#      DIRECTUS_CORS_HEADERS: "Authorization, Content-Type"
+#      DIRECTUS_CORS_METHODS: "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+#      DIRECTUS_CORS_ORIGINS: "http://localhost:3000"
+#      DIRECTUS_CORS_EXPOSE_HEADERS: "Content-Range, X-Total-Count"
+#      DIRECTUS_CORS_MAX_AGE: "3600"
+    networks:
+      - rosatom_network
+
+  nodejs:
+    restart: "unless-stopped"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    ports:
+      - 3000:3000
+    depends_on:
+      - directus
+    networks:
+      - rosatom_network
+
+
+networks:
+  rosatom_network:
+    driver: bridge
