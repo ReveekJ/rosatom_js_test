@@ -15,6 +15,16 @@ mkdir extensions
 mkdir uploads
 ```
 ```shell
+touch .env
+nano .env
+```
+Затем установить некоторые переменные окружения:
+```dotenv
+SECRET=
+ADMIN_EMAIL=
+ADMIN_PASSWORD=
+```
+```shell
 docker-compose up --build
 ```
 
