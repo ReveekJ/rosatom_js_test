@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Unreal Rosatom App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Добрый день! У меня не получилось в полной мере реализовать весь функционал приложения, так как я не смог побороть ошибку CORS, при запросах к directus API (мои попытки это реализовать вы можете видеть в закомментированных строках index.js и docker-compose.yaml)
+Я пытался починить ошибку следуя следующим инструкциям (https://www-restack-io.translate.goog/docs/directus-knowledge-directus-cors-error-fix?_x_tr_sl=en&_x_tr_tl=ru&_x_tr_hl=ru&_x_tr_pto=sc&_x_tr_hist=true), но к сожалению у меня не получилось.
+По этому я могу представить Вам, только простенький сайтик, который выводит Hello. Но попрошу учесть то, что я смог поднять Directus и nodejs в Docker, Понять как работает React. Если бы я смог исправить ошибку CORS, то я бы смог сделать все остальное. 
 
-## Available Scripts
+Как запустить проект:
 
-In the project directory, you can run:
+```shell
+git clone https://github.com/ReveekJ/rosatom_js_test.git
+```
+```shell
+mkdir database
+mkdir extensions
+mkdir uploads
+```
+```shell
+docker-compose up --build
+```
 
-### `npm start`
+Теперь на localhost:3000 находится сайт с надписью Hello, а на localhost:8055 находится админка Directus. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Немного о задании
+Я не ожидал задания по той теме, которой я пошел обучаться на этот курс. По Вашей программе:
+![img.png](img.png)
+Я изучаю основы JS, TS, React. 
+Но тогда почему для прохождения на обучение я уде должен знать JS. React и другие инструменты, о которых не сказано в программе (например, Docker)?!
+К тому же на сайте нигде не указано даже о существовании вступительного, тем более не говориться о том, что нужно знать для поступления на курс:
+![img_1.png](img_1.png)

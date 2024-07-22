@@ -13,9 +13,14 @@ services:
       DB_CLIENT: "sqlite3"
       DB_FILENAME: "/rosatom/database/data.db"
       WEBSOCKETS_ENABLED: "true"
+
+      CORS_ENABLED: "true"
+      CORS_ORIGIN: "nodejs"
+      CORS_METHODS: "GET, POST, PUT, DELETE, PATCH, OPTIONS"
+      CORS_ALLOWED_HEADERS: "Authorization, Content-Type"
 #      DIRECTUS_CORS_HEADERS: "Authorization, Content-Type"
 #      DIRECTUS_CORS_METHODS: "GET, POST, PUT, DELETE, PATCH, OPTIONS"
-#      DIRECTUS_CORS_ORIGINS: "http://localhost:3000"
+#      DIRECTUS_CORS_ORIGINS: "nodejs"
 #      DIRECTUS_CORS_EXPOSE_HEADERS: "Content-Range, X-Total-Count"
 #      DIRECTUS_CORS_MAX_AGE: "3600"
     networks:
